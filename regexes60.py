@@ -1,0 +1,27 @@
+## IN THIS PROGRAM WE ARE GOINNG TO USE CARAT AND DOLLAR SYMBOLS TO DENOTE MATCH THE START OF THE STRING AND MATCH THE END OF THE STRING
+import re
+email=input("email--->").strip()
+
+## REMEMBER THAT THE $ AND .edu DOES NOT REQUIRE ANY SPACE
+if re.search(r"^.+@.+\.edu$",email):
+    print("V")
+
+else :
+    print("IV")
+
+## WE CAN SPECIFY THAT PARTICULAR CHARACHTER ARE TO BE MENTIONED IN THE STRING
+## FOR THIS WE USE [] TO SPECIFY WHICH CHARACTERS ARE ALLOWED AND [^] FOR CERTAIN CHARACTERS THAT ARE NOT ALLOWED SPECIFICALLY
+
+if re.search(r"^[^@]+@[^@]+\.edu$",email):
+    print("VALID")
+
+else:
+    print("INVALID")
+
+## ANOTHER WAY OF DOINNG THIS IS 
+## REMEMBER USE - TO SPECIFY THE RAMGE AMD DO NOT SPACES WHILE ADDING DIFFERENT RANGES
+if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.edu$",email):
+    print("VALID")
+
+else:
+    print("INVALID")
